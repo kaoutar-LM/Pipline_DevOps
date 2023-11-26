@@ -15,5 +15,11 @@ pipeline {
                     git branch: 'main', credentialsId: 'github', url: 'https://github.com/kaoutar-LM/Pipline_DevOps'
 		}
 	}
+	stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
+
+       }    
     }
 }
